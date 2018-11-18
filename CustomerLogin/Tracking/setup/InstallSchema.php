@@ -14,7 +14,7 @@ class InstallSchema implements InstallSchemaInterface {
         $installer->startSetup();
  
         /**
-         *  Create table 'posts'
+         *  Create table 'customer_login_history'
             public function addColumn($name, $type, $size = null, $options = [], $comment = null)
             string $name the column name - 1st argument.
             string $type the column data type - 2nd argument.

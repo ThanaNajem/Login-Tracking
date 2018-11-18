@@ -37,21 +37,13 @@
             <?php foreach ($loginHistoryRecords as $loginHistoryRecord): ?>
 				<tr>
                     <td data-th="<?= $block->escapeHtml(__('Login Number')) ?>" 
-						class="col id">
-                        <?php echo $loginHistoryRecord->getId() ?> 
-                    </td>
+						class="col id"><?php echo $loginHistoryRecord->getId() ?></td>
                     <td data-th="<?= $block->escapeHtml(__('IP address')) ?>"
-                        class="col ipaddress">
-						<?php echo $loginHistoryRecord->getIpAddress(); ?>
-					</td>
+                        class="col ipaddress"><?php echo $loginHistoryRecord->getIpAddress(); ?></td>
                     <td data-th="<?= $block->escapeHtml(__('Date/Time login')) ?>" 
-						class="col date-time-login">
-                     	<?php echo $loginHistoryRecord->getLoginTime(); ?>
-                    </td>
+						class="col date-time-login"><?php echo $loginHistoryRecord->getLoginTime(); ?></td>
                     <td data-th="<?= $block->escapeHtml(__('User Agent')) ?>"
-                        class="col user-agent">
-						<?php echo $loginHistoryRecord->getUserAgent() ?>
-					</td>
+                        class="col user-agent"><?php echo $loginHistoryRecord->getUserAgent() ?></td>
                 </tr>
             <?php endforeach ?>
             </tbody>
