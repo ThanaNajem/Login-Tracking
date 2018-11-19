@@ -9,13 +9,12 @@
 <?php if ($block->getPagerHtml()): ?>
 	<div class="login-history-toolbar toolbar bottom"><?php echo $block->getPagerHtml() ?></div>
 <?php endif ?>
-<?php $loginHistoryRecords = $block->getAllLoginTransactionsForFixedCustomer() ?>
+<?php $loginHistoryRecords = $block->getLoginTransactions() ?>
 <?php if ($loginHistoryRecords && count($loginHistoryRecords)): ?>
 	<div class="table-wrapper login-history"> 
         <table class="table table-login-history-data history table-responsive" id="my-login-history-table">
             <thead style="margin-top: 0px;">
-            <tr>
-                <th scope="col" 
+            <tr><th scope="col" 
 					class="col id">
 					<?php echo __('Login Number') ?>
 				</th>

@@ -5,21 +5,20 @@
  
 /** @var CustomerLogin\Tracking\Block\Account\PreviousLoginData $block */
 ?> 
-<?php if (!$block->getLastLoginTransactionInformationBeforeCurrentLogin()) : ?>
+<?php if (!$block->FirstLoginStatus()) : ?>
         <div class="block-login-data-title">
             <strong>Previous login data of current login</strong>
         </div>
-        <div class="block-content">
+        <div class="block-content-box-content">
         <div class="box box-previous-login-information">
             <strong class="box-title">
                 <span class="box-title-text">Login Data</span>
             </strong>
             <div class="box-content">
-                <p>
-                    IP Address: <?php echo $block->getPreviouslyOfCurrentLoginIpAddress(); ?><br>
-                    Device Type: <?php echo $block->getPreviouslyOfCurrentLoginUserAgent(); ?><br>
-                    Login Time: <?php echo $block->getPreviouslyOfCurrentLoginTime(); ?><br>
-
+                <p class="previous-login-data-of-current-login">
+                    IP Address: <?php echo $block->getLoginTransactionIpAddress(); ?><br>
+                    Device Type: <?php echo $block->getLoginTransactionUserAgent(); ?><br>
+                    Login Time: <?php echo $block->getLoginTransactionTime(); ?><br>
                 </p>
             </div> 
         </div> 

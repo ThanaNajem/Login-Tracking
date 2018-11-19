@@ -6,13 +6,12 @@
 namespace CustomerLogin\Tracking\Controller\Account;
 
 use Magento\Framework\App\Action\Context;
-use Magento\Framework\View\Result\PageFactory;
-use \Magento\Customer\Model\Session;
+use Magento\Framework\View\Result\PageFactory; 
 
 /**
  * Class LoginHistoryPagination to represent login history customer account page
  */
-class LoginHistoryPagination extends \Magento\Customer\Controller\AbstractAccount
+class LoginHistoryPagination extends \Magento\Framework\App\Action\Action//\Magento\Customer\Controller\AbstractAccount
 {
     
     /**
@@ -21,21 +20,15 @@ class LoginHistoryPagination extends \Magento\Customer\Controller\AbstractAccoun
     protected $resultPageFactory;
 
     /**
-    * @var Session
-    */
-    protected $session;
-
-    /**
      * @param Context $context
      * @param PageFactory $resultPageFactory
      * @param Session $session
      */
     public function __construct(
         Context $context,
-        PageFactory $resultPageFactory,
-        Session $session 
-    ) {
-        $this->session = $session;
+        PageFactory $resultPageFactory
+    ) 
+    {
         $this->resultPageFactory = $resultPageFactory;
         parent::__construct($context, $resultPageFactory);
     }
@@ -47,11 +40,7 @@ class LoginHistoryPagination extends \Magento\Customer\Controller\AbstractAccoun
      */
     public function execute()
     {
-        if (!$this->session->isLoggedIn()) {
-            $resultRedirect = $this->resultRedirectFactory->create();
-            $resultRedirect->setPath('home');
-            return $resultRedirect;
-        }
-        return $this->resultPageFactory->create();
+        $resultRedirect = $this->resultPageFactory->create(); 
+        return $resultRedirect;
     }
 }

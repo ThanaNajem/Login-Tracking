@@ -44,7 +44,8 @@ class LoginHistoryPagination extends Template{
         \Magento\Customer\Model\Session $customerSession,
         \CustomerLogin\Tracking\Model\LoginHistory $loginHistory,
         array $data = []
-    ) {
+    ) 
+    {
         parent::__construct($context, $data);
         $this->_loginHistory = $loginHistory;
         $this->customerSession = $customerSession; 
@@ -56,42 +57,44 @@ class LoginHistoryPagination extends Template{
      * 
      * @return CustomerLogin\Tracking\Block\Account\LoginHistoryPagination
      */
-    protected function _prepareLayout() {
+    protected function _prepareLayout() 
+    {
         parent::_prepareLayout();
         $this->pageConfig->getTitle()->set(__('LoginHistory'));
-        if ($this->getAllLoginTransactionsForFixedCustomer()) {
+        if ($this->getLoginTransactions()) {
             $pager = $this->getLayout()
             ->createBlock('\Magento\Theme\Block\Html\Pager', 'test.news.pager')
             ->setAvailableLimit(array(5=>5,10=>10,15=>15))
             ->setShowPerPage(true)
-            ->setCollection($this->getAllLoginTransactionsForFixedCustomer());
+            ->setCollection($this->getLoginTransactions());
             $this->setChild('pager', $pager);
-            $this->getAllLoginTransactionsForFixedCustomer()->load();
+            $this->getLoginTransactions()->load();
         }
         return $this;
     }
    
     /**
-     * get values of current page, current limit and collection for pagination
+     * get values of current page, current limit and collection of current customer for pagination
      * 
      * @return CustomerLogin\Tracking\Model\ResourceModel\LoginHistory\Collection
      */
-    public function getAllLoginTransactionsForFixedCustomer(){
+    public function getLoginTransactions()
+    {
         $this->_collection = $this->getCustomCollection(); 
         $page=($this->getRequest()->getParam('p'))? $this->getRequest()->getParam('p') : 1; 
         $pageSize=($this->getRequest()->getParam('limit'))? $this->getRequest()->getParam('limit') : 5;
         $this->_collection->setPageSize($pageSize);
         $this->_collection->setCurPage($page);
         return $this->_collection;
-    
-   }
+    }
 
     /**
      * get collection of login history for logged in customer
      * 
      * @return CustomerLogin\Tracking\Model\ResourceModel\LoginHistory\Collection
      */
-    public function getCustomCollection(){  
+    public function getCustomCollection()
+    {  
         $this->_customerID = $this->customerSession->getCustomer()->getId(); 
         return $this->_loginHistory->getCollection()->addFieldToFilter("customer_id", array("eq" => $this->_customerID));
     }

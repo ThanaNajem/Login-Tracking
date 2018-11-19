@@ -9,7 +9,7 @@
 }
 
 .box-title-text{
-	border-bottom: 1px solid #c6c6c6 !important;
+	font-size: 1.6rem !important;
 }
 
 .box-title {
@@ -39,15 +39,22 @@
 	.toolbar-wishlist-results .pages{
 		position: unset !important;
 		z-index: unset !important;
-	}	
+	} 
+	.limiter{
+		margin-left: 144px;
+	}
+	.pages .items {
+		margin-top: -168px;
+	}
 } 
+
  
-.block-login-data-title strong {
+div.block-login-data-title strong {
 	font-size: 2.2rem !important;
     font-weight: 300 !important;
 }
 
-.block-login-data-title{
+div.block-login-data-title{
 	border-bottom: 1px solid #c6c6c6 !important;
     margin-bottom: 25px !important;
     padding-bottom: 10px !important;
@@ -64,7 +71,10 @@ h5{
 
 @media only screen and (min-width: 639px){
 .table-login-history-data {
-    margin-top: -97px;
+    margin-top: -63px;
+}
+.pages .action.next{
+    margin-top: 211px !important;
 }
 }
 .table-login-history-data td {
@@ -122,3 +132,228 @@ div.login-data{
     border-left: 5px solid #598ecf;
     border-right: 5px solid #598ecf;
 }
+
+div.box-content p.previous-login-data-of-current-login {
+    line-height: 24px;
+}
+
+div.block-content-box-content {
+	margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 112px){
+.table-login-history-data tr:first-child {
+	margin-top: -463px;
+    vertical-align: top;
+}
+.pages .action.next{
+	margin-top: 315px;
+}
+}
+
+@media only screen and (min-width: 92px) and (max-width: 98px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -596px;
+	}
+	.pages .action.next{
+		margin-right: -24px;
+	}	
+}
+
+@media only screen and (min-width: 99px) and (max-width: 105px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -519px;
+	}	
+}
+
+@media only screen and (min-width: 99px) and (max-width: 105px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -519px;
+	}	
+	.pages .action.next {
+		margin-top: 319px;
+    	margin-right: -6px;
+	}
+}
+
+@media only screen and (min-width: 106px) and (max-width: 113px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -456px;
+	}	
+}
+
+@media only screen and (min-width: 114px) and (max-width: 120px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -422px;
+	}	
+}
+
+@media only screen and (min-width: 114px) and (max-width: 120px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -422px;
+	}	
+}
+
+@media only screen and (min-width: 121px) and (max-width: 128px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -358px;
+	}	
+}
+
+@media only screen and (min-width: 129px) and (max-width: 135px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -338px;
+	}	
+}
+
+@media only screen and (min-width: 136px) and (max-width: 142px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -298px;
+	}	
+}
+
+@media only screen and (min-width: 143px) and (max-width: 149px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -279px;
+	}	
+}
+
+@media only screen and (min-width: 150px) and (max-width: 156px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -237px;
+	}	
+}
+
+@media only screen and (min-width: 157px) and (max-width: 164px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -217px;
+	}	
+}
+
+@media only screen and (min-width: 165px) and (max-width: 171px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -200px;
+	}	
+}
+
+@media only screen and (min-width: 172px) and (max-width: 185px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -178px;
+	}	
+}
+
+@media only screen and (min-width: 186px) and (max-width: 193px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -157px;
+	}	
+}
+
+@media only screen and (min-width: 194px) and (max-width: 208px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -138px;
+	}	
+}
+
+@media only screen and (min-width: 209px) and (max-width: 215px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -118px;
+	}	
+}
+
+
+@media only screen and (min-width: 216px) and (max-width: 236px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -97px;
+	}	
+}
+
+
+@media only screen and (min-width: 237px) and (max-width: 251px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -75px;
+	}	
+}
+
+@media only screen and (min-width: 252px) and (max-width: 273px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -55px;
+	}	
+}
+
+@media only screen and (min-width: 274px) and (max-width: 303px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -36px;
+	}	
+}
+
+@media only screen and (min-width: 303px) and (max-width: 338px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -21px;
+	}	
+}
+
+@media only screen and (min-width: 339px) and (max-width: 382px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: -2px;
+	}	
+}
+
+
+@media only screen and (min-width: 383px) and (max-width: 440px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: 22px;
+	}	
+}
+
+
+@media only screen and (min-width: 441px) and (max-width: 520px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: 40px;
+	}	
+}
+
+
+@media only screen and (min-width: 521px) and (max-width: 638px){
+	.table-wrapper .table:not(.totals):not(.cart):not(.table-comparison) tbody > tr:first-child{
+		margin-top: 62px;
+	}	
+}
+
+@media only screen and (min-width: 335px) and (max-width: 638px){
+	.pages .action.next, .pages .action.previous{
+	    margin-top: 214px !important;
+	}
+}
+
+@media only screen and (min-width: 215px) and (max-width: 334px){
+	.pages .action.next, .pages .action.previous{
+	    margin-top: 241px !important;
+	}
+}
+
+@media only screen and (min-width: 208px) and (max-width: 214px){
+	.pages .action.next, .pages .action.previous{
+	    margin-top: 275px !important;
+	}
+}
+ 
+@media only screen and (min-width: 193px) and (max-width: 207px){
+	.pages .action.next, .pages .action.previous{
+	    margin-top: 299px !important;
+	}
+}
+ 
+ 
+@media only screen and (min-width: 116px) and (max-width: 192px){
+	.pages .action.next, .pages .action.previous{
+	    margin-top: 317px !important;
+	}
+}
+ 
+
+@media only screen and (min-width: 639px) and (max-width: 768px){
+	.pages .items {
+		margin-top: -168px !important;
+	}
+}
+

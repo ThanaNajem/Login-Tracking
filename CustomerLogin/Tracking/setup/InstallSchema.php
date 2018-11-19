@@ -35,13 +35,13 @@ class InstallSchema implements InstallSchemaInterface {
             'ip_address',
             Table::TYPE_TEXT,
             128,
-            [ 'nullable' => false ],
+            [ 'nullable' => true ],
             'IP Address'
         )->addColumn(
             'user_agent',
             Table::TYPE_TEXT,
             128,
-            [ 'nullable' => false ],
+            [ 'nullable' => true ],
             'User Agent'
         )->addColumn(
             'customer_id',
@@ -53,7 +53,7 @@ class InstallSchema implements InstallSchemaInterface {
             'login_time',
             \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
             null,
-            ['nullable' => false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT],
+            ['nullable' => true, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT],
             'Login Time'
         )->setComment(
             'customer login history Table'

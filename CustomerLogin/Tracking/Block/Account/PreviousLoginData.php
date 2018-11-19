@@ -45,7 +45,8 @@ class PreviousLoginData extends Template {
         \CustomerLogin\Tracking\Model\LoginHistory $loginHistory,
         LoginHistoryPagination $LoginHistoryPagination, 
         array $data = []
-    ) {
+    ) 
+    {
         parent::__construct($context, $data);
         $this->_loginHistory = $loginHistory;
         $this->customerSession = $customerSession; 
@@ -53,53 +54,25 @@ class PreviousLoginData extends Template {
         $this->_customerID = $this->customerSession->getCustomer()->getId(); 
 
     }
-
-    /**
-     * Get previous login data for the current login if logged in is not the first time else null
-     *  
-     * @return \CustomerLogin\Tracking\Model\LoginHistory|string
-     */
-    public function getLastLoginTransactionInformationBeforeCurrentLogin(){
-        $customerLoggedInStatus = false ;
-		if ($this->checkIfThisIsFirstLogin()) {
-			$customerLoggedInStatus = true;
-		}
-        return $customerLoggedInStatus;
-    }
-    
-    /**
-     * Check if customer is logged in
-     *  
-     * @return bool
-     */
-    public function checkIfCustomerLoggedIn(){
-    	return $this->customerSession->isLoggedIn();
-    }
-
+ 
     /**
      * Check if the first customer's logged from browser manually
      *  
      * @return bool
      */
-    public function checkIfThisIsFirstLogin(){ 
- 	    return $this->getCountOfCustomerLogin()==1 ;
+    public function FirstLoginStatus()
+    { 
+        $countOfLoginTransactions = count($this->getCustomCollection());
+ 	    return $countOfLoginTransactions==1 ;
  	}
-
-    /**
-     * Times Of Customer logged in from browser manually that may be zero or more.
-     *  
-     * @return int 
-     */
-    public function getCountOfCustomerLogin(){
-        return count($this->getCustomCollection());
-    } 
     
     /**
      * Get previous login data for the current customer logged in from browser manually
      *  
      * @return CustomerLogin\Tracking\Model\ResourceModel\LoginHistory\Collection|null
      */
-    public function getFirstItemOfPreviouslyCurrentLoginHistoryCollectionSortedByLoginTime(){
+    public function getPreviousLoginTransaction()
+    {
         $this->_customerID = $this->customerSession->getCustomer()->getId(); 
         $collection = $this->getCustomCollection()
                            ->addFieldToSelect("*")
@@ -109,22 +82,13 @@ class PreviousLoginData extends Template {
     }
 
     /**
-     * Get previous login id for the current customer logged in from browser manually
-     *  
-     * @return int
-     */ 
-    public function getPreviouslyOfCurrentLoginId(){
-        return $this->getFirstItemOfPreviouslyCurrentLoginHistoryCollectionSortedByLoginTime()
-                    ->getId();
-    }
-
-    /**
      * Get previous login IP Address for the current customer logged in from browser manually
      *  
      * @return string
      */ 
-    public function getPreviouslyOfCurrentLoginIpAddress(){
-        return $this->getFirstItemOfPreviouslyCurrentLoginHistoryCollectionSortedByLoginTime()
+    public function getLoginTransactionIpAddress()
+    {
+        return $this->getPreviousLoginTransaction()
                     ->getIpAddress();
     }
 
@@ -133,8 +97,9 @@ class PreviousLoginData extends Template {
      *  
      * @return string
      */ 
-    public function getPreviouslyOfCurrentLoginUserAgent(){
-        return $this->getFirstItemOfPreviouslyCurrentLoginHistoryCollectionSortedByLoginTime()
+    public function getLoginTransactionUserAgent()
+    {
+        return $this->getPreviousLoginTransaction()
                     ->getUserAgent();
     }
 
@@ -143,8 +108,8 @@ class PreviousLoginData extends Template {
      *  
      * @return string
      */ 
-    public function getPreviouslyOfCurrentLoginTime(){
-        return $this->getFirstItemOfPreviouslyCurrentLoginHistoryCollectionSortedByLoginTime()
+    public function getLoginTransactionTime(){
+        return $this->getPreviousLoginTransaction()
                     ->getLoginTime();
     }
 
@@ -153,7 +118,8 @@ class PreviousLoginData extends Template {
      *  
      * @return int
      */ 
-    public function getLastLoginId(){ 
+    public function getLastLoginId()
+    { 
         return $this->getCustomCollection()
                     ->addFieldToSelect("*")
                     ->getLastItem()
@@ -166,7 +132,8 @@ class PreviousLoginData extends Template {
      * don't check if customer logged in or not because it was done in related controller
      * @return CustomerLogin\Tracking\Model\ResourceModel\LoginHistory\Collection|null
      */
-    public function getCustomCollection(){  
+    public function getCustomCollection()
+    {  
         return $this->_loginHistoryPagination->getCustomCollection();
     }
 
@@ -175,7 +142,8 @@ class PreviousLoginData extends Template {
      *  
      * @return string
      */
- 	public function getMessageForFirstLogin(){
+ 	public function getMessageForFirstLogin()
+    {
  		return 'This is your first login in website, so there are no previous logins';
  	}
 }
